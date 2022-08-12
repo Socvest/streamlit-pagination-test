@@ -7,12 +7,6 @@ from streamlit_pagination import pagination_component
 
 st.markdown("<style> div[data-testid='stStatusWidget']{display:none}</style>", unsafe_allow_html=True)
 st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)#
-
-# if 'foo' not in st.session_state:
-#     st.session_state['foo'] = 0 
-   
-if 'foo_clicked' not in st.session_state:
-    st.session_state['foo_clicked'] = False
     
 words = ['light',
 'bed',
@@ -156,7 +150,8 @@ test = pagination_component(len(list_df), layout=layout, key="foo")
 
 #if st.session_state['foo'] != None:
 #st.experimental_set_query_params(page=st.session_state['foo'] + 1)
-page_params(st.session_state['foo'])
+if st.session_state['foo'] != None:
+   page_params(st.session_state['foo'])
  
 st.write(st.experimental_get_query_params())
 
