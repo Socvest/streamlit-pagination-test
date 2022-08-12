@@ -3,6 +3,7 @@ import random
 import string
 import pandas as pd
 import numpy as np
+from streamlit_pagionation import pagination_component
 
 st.markdown("<style> div[data-testid='stStatusWidget']{display:none}</style>", unsafe_allow_html=True)
 st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)#
@@ -12,8 +13,6 @@ if 'foo' not in st.session_state:
     
 def random_char(y):
     return ''.join(random.choice(string.ascii_letters) for x in range(y))
-
-print(random_char(5))
 
 
 data = pd.DataFrame(np.random.randint(0,100,size=(1000, 4)), columns=list('ABCD')) 
