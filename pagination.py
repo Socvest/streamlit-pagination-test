@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 st.markdown("<style> div[data-testid='stStatusWidget']{display:none}</style>", unsafe_allow_html=True)
-st.markdown('<style>' + open('./iFrame.css').read() + '</style>', unsafe_allow_html=True)#
+st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)#
 
 if 'foo' not in st.session_state:
     st.session_state['foo'] = 0 
