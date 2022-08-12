@@ -14,8 +14,10 @@ if 'foo' not in st.session_state:
 def random_char(y):
     return ''.join(random.choice(string.ascii_letters) for x in range(y))
 
+num_oc_cols = st.slider("number of columns", (0,100), 4)
 
-data = pd.DataFrame(np.random.randint(0,100,size=(1000, 4)), columns=list('ABCD')) 
+
+data = pd.DataFrame(np.random.randint(0,100,size=(1000, num_oc_cols)), columns=list('ABCD')) 
 
 n = 100  
 list_df = [data[i:i+n] for i in range(0,data.shape[0],n)] 
