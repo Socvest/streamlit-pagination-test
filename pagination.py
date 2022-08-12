@@ -17,7 +17,7 @@ def random_char(y):
 num_of_cols = st.slider("number of columns", 0,100, value=4)
 
 
-data = pd.DataFrame(np.random.randint(0,100,size=(1000, num_of_cols)), columns=list(random_char(num_of_cols)) 
+data = pd.DataFrame(np.random.randint(0,100,size=(1000, num_of_cols)), columns=list(random_char(num_of_cols))) 
 
 n = 100  
 list_df = [data[i:i+n] for i in range(0,data.shape[0],n)] 
