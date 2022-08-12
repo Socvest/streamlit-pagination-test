@@ -126,11 +126,11 @@ with st.expander("Make adjustments to data"):
     width_df = st.slider("width of dataframe", 0, 1000, value=600)
     height_df = st.slider("Height of dataframe", 0, 1000, value=700)
     
-def page_params(value):
+# def page_params(value):
     
-    query_params = st.experimental_get_query_params()    
-    #forgot_p_q_params = query_params["page"][0] if "page" in query_params else value + 1
-    st.experimental_set_query_params(page=value + 1)
+#     query_params = st.experimental_get_query_params()    
+#     #forgot_p_q_params = query_params["page"][0] if "page" in query_params else value + 1
+#     st.experimental_set_query_params(page=value + 1)
 
 # query_params = st.experimental_get_query_params()
 
@@ -150,8 +150,8 @@ test = pagination_component(len(list_df), layout=layout, key="foo")
 
 #if st.session_state['foo'] != None:
 #st.experimental_set_query_params(page=st.session_state['foo'] + 1)
-if st.session_state['foo'] != None:
-   page_params(st.session_state['foo'])
+# if st.session_state['foo'] != None:
+#    page_params(st.session_state['foo'])
  
-st.write(st.experimental_get_query_params())
+# st.write(st.experimental_get_query_params())
 
