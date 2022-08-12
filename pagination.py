@@ -116,7 +116,7 @@ def random_char(y):
     
     return words[:y]
 
-with st.expander:
+with st.expander("Make adjustments to data"):
 
     num_of_cols = st.slider("number of columns", 0,100, value=4)
     num_of_rows = st.slider("number of rows", 0,10000, value=1000)
