@@ -147,8 +147,8 @@ test = pagination_component(len(list_df), layout=layout, key="foo")
 
 st.write(test)
 
-# if test:
-#     st.experimental_set_query_params(page=st.session_state['foo'] + 1)
+if test == st.session_state['foo']:
+    st.experimental_set_query_params(page=st.session_state['foo'] + 1)
  
 st.write(st.experimental_get_query_params())
 
