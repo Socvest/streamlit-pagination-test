@@ -21,7 +21,7 @@ num_of_rows = st.slider("number of rows", 0,10000, value=1000)
 num_of_row_chunks = st.number_input("Number of rows per chunk of data", value=100)
 
 
-data = pd.DataFrame(np.random.randint(0,100,size=(num_of_rows, num_of_cols)), columns=list(random_char(num_of_cols))) 
+data = pd.DataFrame(np.random.randint(0,100,size=(int(num_of_rows), int(num_of_cols))), columns=list(random_char(num_of_cols))) 
 
 n = int(num_of_row_chunks)
 list_df = [data[i:i+n] for i in range(0,data.shape[0],n)] 
