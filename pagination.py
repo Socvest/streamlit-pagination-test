@@ -23,7 +23,7 @@ num_of_row_chunks = st.number_input("Number of rows per chunk of data", value=10
 
 data = pd.DataFrame(np.random.randint(0,100,size=(num_of_rows, num_of_cols)), columns=list(random_char(num_of_cols))) 
 
-n = num_of_row_chunks  
+n = int(num_of_row_chunks)
 list_df = [data[i:i+n] for i in range(0,data.shape[0],n)] 
 
 data_l = list_df[st.session_state['foo']] 
