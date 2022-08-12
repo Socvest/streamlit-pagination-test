@@ -145,5 +145,5 @@ layout = {  'color':"primary",
 test = pagination_component(len(list_df), layout=layout, key="foo")
 
 page_params(st.session_state['foo'])
-st.experimental_get_query_params()
+st.write(st.experimental_get_query_params())
 
