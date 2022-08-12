@@ -130,8 +130,8 @@ with st.expander("Make adjustments to data"):
 def page_params(value):
     
     query_params = st.experimental_get_query_params()    
-    forgot_p_q_params = query_params["page"][0] if "page" in query_params else value + 1
-    st.experimental_set_query_params(page=forgot_p_q_params)
+    #forgot_p_q_params = query_params["page"][0] if "page" in query_params else value + 1
+    st.experimental_set_query_params(page=value + 1)
 
 # query_params = st.experimental_get_query_params()
 
