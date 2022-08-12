@@ -130,7 +130,7 @@ with st.expander("Make adjustments to data"):
 #     forgot_p_q_params = query_params["page"][0] if "page" in query_params else value
 #     st.experimental_set_query_params(page=forgot_p_q_params)
 
-query_params = st.experimental_get_query_params()
+# query_params = st.experimental_get_query_params()
 
 data = pd.DataFrame(np.random.randint(0,100,size=(int(num_of_rows), int(num_of_cols))), columns=random_char(num_of_cols))
 
