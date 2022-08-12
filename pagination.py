@@ -12,9 +12,9 @@ if 'foo' not in st.session_state:
     st.session_state['foo'] = 0 
     
 def random_char(y):
-    alphabet = list(string.ascii_lowercase)
-    random.shuffle(alphabet)
-    return ''.join(random.choice(alphabet) for x in range(y))
+#     alphabet = list(string.ascii_lowercase)
+#     random.shuffle(alphabet)
+    return ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(y))
 
 num_of_cols = st.slider("number of columns", 0,100, value=4)
 num_of_rows = st.slider("number of rows", 0,10000, value=1000)
