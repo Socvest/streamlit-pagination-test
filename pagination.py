@@ -116,11 +116,13 @@ def random_char(y):
     
     return words[:y]
 
-num_of_cols = st.slider("number of columns", 0,100, value=4)
-num_of_rows = st.slider("number of rows", 0,10000, value=1000)
-num_of_row_chunks = st.number_input("Number of rows per chunk of data", value=100)
-width_df = st.slider("width of dataframe", 0, 1000, value=600)
-height_df = st.slider("Height of dataframe", 0, 1000, value=700)
+with st.expander:
+
+    num_of_cols = st.slider("number of columns", 0,100, value=4)
+    num_of_rows = st.slider("number of rows", 0,10000, value=1000)
+    num_of_row_chunks = st.number_input("Number of rows per chunk of data", value=100)
+    width_df = st.slider("width of dataframe", 0, 1000, value=600)
+    height_df = st.slider("Height of dataframe", 0, 1000, value=700)
 
 
 data = pd.DataFrame(np.random.randint(0,100,size=(int(num_of_rows), int(num_of_cols))), columns=random_char(num_of_cols))
