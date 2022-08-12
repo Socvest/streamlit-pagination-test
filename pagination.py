@@ -144,6 +144,7 @@ layout = {  'color':"primary",
             'style':{'margin-top':'10px'}}
 test = pagination_component(len(list_df), layout=layout, key="foo")
 
-page_params(st.session_state['foo'])
+if test is not None:
+    page_params(st.session_state['foo'] + 1)
 st.write(st.experimental_get_query_params())
 
