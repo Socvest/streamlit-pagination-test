@@ -143,7 +143,7 @@ def email_ver(value):
     query_params = st.experimental_get_query_params()
     #query_params["authentication"][0] if "authentication" in query_params else "emailVerification"
     
-    forgot_p_q_params = query_params["page"][0] if "page" in query_params else f"page={value}"
+    forgot_p_q_params = query_params["page"][0] if "page" in query_params else value
     st.experimental_set_query_params(page=forgot_p_q_params)
     
 email_ver(test)
