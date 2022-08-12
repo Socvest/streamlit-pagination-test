@@ -8,8 +8,8 @@ from streamlit_pagination import pagination_component
 st.markdown("<style> div[data-testid='stStatusWidget']{display:none}</style>", unsafe_allow_html=True)
 st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)#
 
-if 'foo' not in st.session_state:
-    st.session_state['foo'] = 0 
+# if 'foo' not in st.session_state:
+#     st.session_state['foo'] = 0 
    
 if 'foo_clicked' not in st.session_state:
     st.session_state['foo_clicked'] = False
@@ -119,6 +119,11 @@ def random_char(y):
     
     return words[:y]
 
+def testF():
+    if st.session_state['foo'] == None:
+        return 0
+    return st.session_state['foo']
+
 with st.expander("Make adjustments to data"):
 
     num_of_cols = st.slider("number of columns", 0,100, value=4)
@@ -140,7 +145,7 @@ data = pd.DataFrame(np.random.randint(0,100,size=(int(num_of_rows), int(num_of_c
 n = int(num_of_row_chunks)
 list_df = [data[i:i+n] for i in range(0,data.shape[0],n)] 
 
-data_l = list_df[st.session_state['foo']] 
+data_l = list_df[testF()] #st.session_state['foo']] 
 
 st.dataframe(data_l, width=width_df, height=height_df)
 
