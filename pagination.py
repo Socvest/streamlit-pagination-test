@@ -10,6 +10,9 @@ st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_ht
 
 if 'foo' not in st.session_state:
     st.session_state['foo'] = 0 
+   
+if 'foo_clicked' not in st.session_state:
+    st.session_state['foo_clicked'] = False
     
 words = ['light',
 'bed',
@@ -145,7 +148,8 @@ layout = {  'color':"primary",
             'style':{'margin-top':'10px'}}
 test = pagination_component(len(list_df), layout=layout, key="foo")
 
-st.write(test)
+if test != None or st.session_state['foo_clicked']:
+    st.session_state['foo_clicked'] = True
 
 #if st.session_state['foo'] != None:
 st.experimental_set_query_params(page=st.session_state['foo'] + 1)
