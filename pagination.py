@@ -137,3 +137,14 @@ st.dataframe(data_l, width=width_df, height=height_df)
 layout = {  'color':"primary", 
             'style':{'margin-top':'10px'}}
 test = pagination_component(len(list_df), layout=layout, key="foo")
+
+def email_ver(value):
+    
+    query_params = st.experimental_get_query_params()
+    query_params["authentication"][0] if "authentication" in query_params else "emailVerification"
+    
+    forgot_p_q_params = query_params["page" if "page" in query_params else f"page={value}"
+    st.experimental_set_query_params(page=forgot_p_q_params)
+    
+email_ver(test)
+
