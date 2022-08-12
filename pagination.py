@@ -3,7 +3,7 @@ import random
 import string
 import pandas as pd
 import numpy as np
-from streamlit_pagionation import pagination_component
+from streamlit_pagination import pagination_component
 
 st.markdown("<style> div[data-testid='stStatusWidget']{display:none}</style>", unsafe_allow_html=True)
 st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)#
