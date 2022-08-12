@@ -123,6 +123,12 @@ with st.expander("Make adjustments to data"):
     num_of_row_chunks = st.number_input("Number of rows per chunk of data", value=100)
     width_df = st.slider("width of dataframe", 0, 1000, value=600)
     height_df = st.slider("Height of dataframe", 0, 1000, value=700)
+    
+def page_params(value):
+    
+    query_params = st.experimental_get_query_params()    
+    forgot_p_q_params = query_params["page"][0] if "page" in query_params else value
+    st.experimental_set_query_params(page=forgot_p_q_params)
 
 
 data = pd.DataFrame(np.random.randint(0,100,size=(int(num_of_rows), int(num_of_cols))), columns=random_char(num_of_cols))
@@ -138,13 +144,5 @@ layout = {  'color':"primary",
             'style':{'margin-top':'10px'}}
 test = pagination_component(len(list_df), layout=layout, key="foo")
 
-def email_ver(value):
-    
-    query_params = st.experimental_get_query_params()
-    #query_params["authentication"][0] if "authentication" in query_params else "emailVerification"
-    
-    forgot_p_q_params = query_params["page"][0] if "page" in query_params else value
-    st.experimental_set_query_params(page=forgot_p_q_params)
-    
-email_ver(test)
+page_params(st.session_state['foo'])
 
