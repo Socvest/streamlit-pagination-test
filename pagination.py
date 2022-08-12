@@ -114,7 +114,7 @@ def random_char(y):
     return words[:y]
 
 def testF():
-    if st.session_state['foo'] == None:
+    if 'foo' not in st.session_state:
         return 0
     return st.session_state['foo']
 
